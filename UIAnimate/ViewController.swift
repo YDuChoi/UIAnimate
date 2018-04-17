@@ -21,5 +21,24 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func buttonPressed(_ sender: Any) {
+        
+       let myAlert =  UIAlertController(title: "알림", message: "설정한 시간이 되었습니다.!", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: {(myaction: UIAlertAction) -> Void in
+            self.view.backgroundColor = UIColor.red
+        })
+        
+        let test = UIAlertAction(title: "중간", style: .default, handler: {(myaction: UIAlertAction) -> Void in
+            self.view.backgroundColor = UIColor.green
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+            myAlert.addAction(okAction)
+            myAlert.addAction(cancelAction)
+            myAlert.addAction(test)
+            present(myAlert, animated: true, completion: nil)
+
+    }
 }
 
